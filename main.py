@@ -5,12 +5,11 @@ import yaml
 
 
 class Circle:
-    def __init__(self, radius, fill='red', stroke='black', at=(0,0)):
+    def __init__(self, radius, fill='red', stroke='black', at=(0, 0)):
         self._radius = radius
         self._fill = fill
         self._stroke = stroke
         self._at = at
-
 
     def calculate_area(self):
         return pi * self._radius ** 2
@@ -25,10 +24,10 @@ class Circle:
     def __str__(self):
         string = yaml.dump({
             'circle': {
-                'radius':self._radius,
-                'fill':self._fill,
-                'stroke':self._stroke,
-                'at':self._at
+                'radius': self._radius,
+                'fill': self._fill,
+                'stroke': self._stroke,
+                'at': self._at
             }
         })
         return string
@@ -42,7 +41,6 @@ class Circle:
         return obj
 
 
-
 class Quad:
     def __init__(self, width, height, fill='red', stroke='black'):
         self._width = width
@@ -50,12 +48,12 @@ class Quad:
         self._fill = fill
         self._stroke = stroke
 
+
 class Canvas:
     def __init__(self, width, height, bg='orange'):
         self._width = width
         self._height = height
         self._bg = bg
-
 
 
 def main():
@@ -66,8 +64,8 @@ def main():
     circle2 = Circle(8.0)
 
     my_dict = {
-        'key':{
-            'inside_dict':[5,6,7,8]
+        'key': {
+            'inside_dict': [5, 6, 7, 8]
         }
     }
     my_yaml = yaml.dump(my_dict)
@@ -90,4 +88,3 @@ circle:
 
 if __name__ == "__main__":
     sys.exit(main())
-
